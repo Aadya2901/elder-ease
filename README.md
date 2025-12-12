@@ -14,8 +14,8 @@ To build a **simple, intuitive, and emotionally supportive AI assistant** that s
 
 ## 🚀 Live Demo
 
-🔗 **Website:** [Visit the Website](https://elder-ease-eight.vercel.app/)
-**Demo Video:** [Watch Demo on YouTube](https://youtu.be/jySe5wePs-8)
+🔗 *Website:* [Visit the Website](https://elder-ease-eight.vercel.app/) <br>
+🔗 *Demo Video:* [Watch Demo on YouTube](https://youtu.be/jySe5wePs-8)
 ---
 
 ## 🖥️ Tech Stack
