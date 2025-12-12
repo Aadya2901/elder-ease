@@ -26,7 +26,6 @@ export function EmergencyAlertModal({ isOpen, onClose, familyMembers }: Emergenc
 
   const handleSendAlert = async () => {
     setIsSending(true);
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     setIsSending(false);
     setIsSent(true);
@@ -41,59 +40,58 @@ export function EmergencyAlertModal({ isOpen, onClose, familyMembers }: Emergenc
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-lg rounded-3xl p-8">
+      <DialogContent className="sm:max-w-md rounded-2xl p-6">
         {!isSent ? (
           <>
             <DialogHeader className="text-center">
-              <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-destructive/10 flex items-center justify-center">
-                <AlertTriangle className="h-8 w-8 text-destructive" />
+              <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                <AlertTriangle className="h-6 w-6 text-destructive" />
               </div>
-              <DialogTitle className="text-2xl font-bold">Send Emergency Alert</DialogTitle>
-              <DialogDescription className="text-lg mt-2">
-                Select family members to notify. They will receive a call and message immediately.
+              <DialogTitle className="text-xl font-semibold">Send Emergency Alert</DialogTitle>
+              <DialogDescription className="text-sm mt-1">
+                Select family members to notify immediately.
               </DialogDescription>
             </DialogHeader>
 
-            <div className="space-y-3 mt-6">
+            <div className="space-y-2 mt-4">
               {familyMembers.map(member => (
                 <button
                   key={member.id}
                   onClick={() => toggleMember(member.id)}
                   className={cn(
-                    "w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all duration-200",
+                    "w-full flex items-center gap-3 p-3 rounded-xl border transition-all duration-200",
                     selectedMembers.includes(member.id)
                       ? "border-primary bg-primary/5"
                       : "border-border hover:border-primary/50"
                   )}
                 >
-                  <div className="h-14 w-14 rounded-full bg-elder-peach flex items-center justify-center text-2xl">
+                  <div className="h-10 w-10 rounded-full bg-elder-blush flex items-center justify-center text-lg">
                     {member.avatar}
                   </div>
                   <div className="flex-1 text-left">
-                    <p className="text-xl font-semibold">{member.name}</p>
-                    <p className="text-muted-foreground">{member.relationship}</p>
+                    <p className="text-base font-medium">{member.name}</p>
+                    <p className="text-sm text-muted-foreground">{member.relationship}</p>
                   </div>
                   <div className={cn(
-                    "h-8 w-8 rounded-full border-2 flex items-center justify-center transition-all",
+                    "h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all",
                     selectedMembers.includes(member.id)
                       ? "bg-primary border-primary"
-                      : "border-muted-foreground/30"
+                      : "border-border"
                   )}>
                     {selectedMembers.includes(member.id) && (
-                      <Check className="h-5 w-5 text-primary-foreground" />
+                      <Check className="h-4 w-4 text-primary-foreground" />
                     )}
                   </div>
                 </button>
               ))}
             </div>
 
-            <div className="flex gap-4 mt-8">
-              <Button variant="secondary" size="lg" className="flex-1" onClick={handleClose}>
+            <div className="flex gap-3 mt-6">
+              <Button variant="secondary" className="flex-1" onClick={handleClose}>
                 Cancel
               </Button>
               <Button
-                variant="emergency"
-                size="lg"
+                variant="destructive"
                 className="flex-1"
                 disabled={selectedMembers.length === 0 || isSending}
                 onClick={handleSendAlert}
@@ -102,7 +100,7 @@ export function EmergencyAlertModal({ isOpen, onClose, familyMembers }: Emergenc
                   'Sending...'
                 ) : (
                   <>
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 mr-1" />
                     Send Alert
                   </>
                 )}
@@ -110,18 +108,18 @@ export function EmergencyAlertModal({ isOpen, onClose, familyMembers }: Emergenc
             </div>
           </>
         ) : (
-          <div className="text-center py-8">
-            <div className="mx-auto mb-6 h-20 w-20 rounded-full bg-success/10 flex items-center justify-center animate-scale-in">
-              <Heart className="h-10 w-10 text-success animate-heartbeat" />
+          <div className="text-center py-6">
+            <div className="mx-auto mb-4 h-14 w-14 rounded-full bg-success/10 flex items-center justify-center animate-scale-in">
+              <Heart className="h-7 w-7 text-success" />
             </div>
-            <h2 className="text-2xl font-bold mb-2">Alert Sent! 💖</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Your family has been notified and will be with you soon.
+            <h2 className="text-xl font-semibold mb-1">Alert Sent</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Your family has been notified.
             </p>
-            <p className="text-xl mb-8">
+            <p className="text-base mb-6">
               {selectedMembers.length} family member{selectedMembers.length > 1 ? 's' : ''} notified
             </p>
-            <Button size="lg" onClick={handleClose}>
+            <Button onClick={handleClose}>
               Close
             </Button>
           </div>

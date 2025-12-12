@@ -14,53 +14,57 @@ export function ChatBubble({ message, isSpeaking }: ChatBubbleProps) {
   return (
     <div
       className={cn(
-        "flex gap-4 animate-fade-in",
+        "flex gap-3 animate-fade-in",
         isAssistant ? "flex-row" : "flex-row-reverse"
       )}
     >
       {/* Avatar */}
       <div
         className={cn(
-          "h-14 w-14 rounded-full flex items-center justify-center flex-shrink-0 text-2xl",
+          "h-10 w-10 rounded-full flex items-center justify-center flex-shrink-0",
           isAssistant
-            ? "gradient-sky text-primary-foreground"
-            : "bg-elder-peach"
+            ? "bg-primary/10"
+            : "bg-elder-blush"
         )}
       >
-        {isAssistant ? '💖' : <User className="h-7 w-7 text-foreground" />}
+        {isAssistant ? (
+          <span className="text-lg">✨</span>
+        ) : (
+          <User className="h-5 w-5 text-foreground/70" />
+        )}
       </div>
 
       {/* Bubble */}
       <div
         className={cn(
-          "max-w-[80%] rounded-3xl p-5 shadow-soft",
+          "max-w-[80%] rounded-2xl px-4 py-3",
           isAssistant
-            ? "bg-card rounded-tl-lg"
-            : "bg-primary text-primary-foreground rounded-tr-lg"
+            ? "bg-secondary rounded-tl-md"
+            : "bg-primary text-primary-foreground rounded-tr-md"
         )}
       >
         {/* Voice indicator */}
         {message.isVoice && !isAssistant && (
-          <div className="flex items-center gap-2 mb-2 text-primary-foreground/80">
-            <Mic className="h-4 w-4" />
-            <span className="text-sm">Voice message</span>
+          <div className="flex items-center gap-1.5 mb-1.5 text-primary-foreground/70">
+            <Mic className="h-3 w-3" />
+            <span className="text-xs">Voice</span>
           </div>
         )}
 
-        <p className="text-xl leading-relaxed">{message.content}</p>
+        <p className="text-base leading-relaxed">{message.content}</p>
 
         {/* Speaking indicator for assistant */}
         {isAssistant && isSpeaking && (
-          <div className="flex items-center gap-2 mt-3 text-primary">
+          <div className="flex items-center gap-2 mt-2 text-primary">
             <VoiceWaveform isActive={true} bars={4} className="[&>div]:bg-primary" />
-            <span className="text-sm font-medium">Speaking...</span>
+            <span className="text-xs font-medium">Speaking...</span>
           </div>
         )}
 
         {/* Timestamp */}
         <p className={cn(
-          "text-sm mt-2",
-          isAssistant ? "text-muted-foreground" : "text-primary-foreground/70"
+          "text-xs mt-1.5",
+          isAssistant ? "text-muted-foreground" : "text-primary-foreground/60"
         )}>
           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </p>

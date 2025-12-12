@@ -4,7 +4,7 @@ import { ReminderCard } from '@/components/ReminderCard';
 import { VoiceButton } from '@/components/VoiceButton';
 import { EmergencyAlertModal } from '@/components/EmergencyAlertModal';
 import { Reminder, FamilyMember } from '@/types/elderease';
-import { AlertTriangle, Sun, Heart } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 
 interface HomeDashboardProps {
   reminders: Reminder[];
@@ -33,7 +33,6 @@ export function HomeDashboard({
   const handleVoiceClick = () => {
     setIsListening(!isListening);
     if (!isListening) {
-      // Simulate stopping after 3 seconds
       setTimeout(() => {
         setIsListening(false);
         onVoiceCommand();
@@ -42,16 +41,13 @@ export function HomeDashboard({
   };
 
   return (
-    <div className="space-y-6 pb-32">
-      {/* Header */}
-      <div className="gradient-sky rounded-3xl p-6 text-primary-foreground shadow-card">
-        <div className="flex items-center gap-3 mb-2">
-          <Sun className="h-8 w-8" />
-          <span className="text-xl">{greeting},</span>
-        </div>
-        <h1 className="text-3xl font-bold">{userName} 💖</h1>
-        <p className="text-lg mt-2 text-primary-foreground/90">
-          You have {reminders.length - completedCount} tasks remaining today
+    <div className="space-y-8 pb-32">
+      {/* Greeting */}
+      <div className="text-center py-6">
+        <p className="text-muted-foreground text-lg">{greeting},</p>
+        <h2 className="text-3xl font-display font-semibold text-foreground mt-1">{userName}</h2>
+        <p className="text-muted-foreground mt-2">
+          {reminders.length - completedCount} tasks remaining today
         </p>
       </div>
 
@@ -63,17 +59,14 @@ export function HomeDashboard({
           onClick={handleVoiceClick}
           size="xl"
         />
-        <p className="text-muted-foreground text-center mt-4 text-lg">
-          Ask me about your schedule, medications, or anything else!
-        </p>
       </div>
 
       {/* Next Reminder Card */}
       {nextReminder && (
         <div className="space-y-3">
-          <h2 className="text-xl font-bold flex items-center gap-2">
-            <span>⏰</span> Next Reminder
-          </h2>
+          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+            Next up
+          </h3>
           <ReminderCard
             reminder={nextReminder}
             isNext={true}
@@ -84,9 +77,9 @@ export function HomeDashboard({
 
       {/* Today's Schedule Preview */}
       <div className="space-y-3">
-        <h2 className="text-xl font-bold flex items-center gap-2">
-          <span>📅</span> Today's Schedule
-        </h2>
+        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+          Today's Schedule
+        </h3>
         <div className="space-y-3">
           {reminders.slice(0, 4).map(reminder => (
             <ReminderCard
@@ -101,16 +94,16 @@ export function HomeDashboard({
       {/* Emergency Alert Button */}
       <div className="pt-4">
         <Button
-          variant="emergency"
-          size="xl"
-          className="w-full"
+          variant="destructive"
+          size="lg"
+          className="w-full h-14 text-lg font-medium"
           onClick={() => setIsEmergencyModalOpen(true)}
         >
-          <AlertTriangle className="h-6 w-6" />
+          <AlertTriangle className="h-5 w-5 mr-2" />
           Send Alert to Family
         </Button>
-        <p className="text-center text-muted-foreground mt-2">
-          Tap if you need help - your family will be notified immediately
+        <p className="text-center text-sm text-muted-foreground mt-3">
+          Tap if you need help — your family will be notified
         </p>
       </div>
 
