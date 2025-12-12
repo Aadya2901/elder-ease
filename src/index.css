@@ -2,95 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* ElderEase - Warm, Accessible Pastel Blue Palette */
+    --background: 210 40% 98%;
+    --foreground: 215 50% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 50% 99%;
+    --card-foreground: 215 50% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 50% 99%;
+    --popover-foreground: 215 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Calming Sky Blue */
+    --primary: 205 85% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft Lavender Blue */
+    --secondary: 220 40% 94%;
+    --secondary-foreground: 215 50% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Light Blue Gray */
+    --muted: 210 30% 95%;
+    --muted-foreground: 215 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm Coral for CTAs */
+    --accent: 15 85% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Emergency Red */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success Green */
+    --success: 145 60% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Warning Amber */
+    --warning: 38 92% 55%;
+    --warning-foreground: 215 50% 15%;
 
-    --sidebar-background: 0 0% 98%;
+    --border: 210 30% 88%;
+    --input: 210 30% 92%;
+    --ring: 205 85% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 1rem;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Custom ElderEase tokens */
+    --elder-sky: 205 90% 65%;
+    --elder-ocean: 200 75% 45%;
+    --elder-mist: 210 50% 96%;
+    --elder-cloud: 210 60% 99%;
+    --elder-coral: 15 85% 65%;
+    --elder-peach: 25 90% 85%;
+    --elder-mint: 160 50% 85%;
+    --elder-lavender: 250 40% 90%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Gradients */
+    --gradient-sky: linear-gradient(135deg, hsl(205 90% 70%) 0%, hsl(200 85% 55%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(15 85% 70%) 0%, hsl(5 80% 60%) 100%);
+    --gradient-calm: linear-gradient(180deg, hsl(210 50% 98%) 0%, hsl(210 40% 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(205 85% 55%) 0%, hsl(220 70% 50%) 100%);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(205 50% 50% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(205 50% 40% / 0.12);
+    --shadow-button: 0 4px 15px -2px hsl(205 85% 55% / 0.3);
+    --shadow-coral: 0 4px 15px -2px hsl(15 85% 55% / 0.35);
+    --shadow-glow: 0 0 40px hsl(205 85% 55% / 0.2);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 215 50% 15%;
+    --sidebar-primary: 205 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 50% 94%;
+    --sidebar-accent-foreground: 215 50% 25%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 205 85% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 50% 10%;
+    --foreground: 210 40% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 45% 13%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 45% 13%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 205 85% 60%;
+    --primary-foreground: 215 50% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 35% 20%;
+    --secondary-foreground: 210 40% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 35% 18%;
+    --muted-foreground: 210 25% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 15 80% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --success: 145 55% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 85% 50%;
+    --warning-foreground: 215 50% 10%;
+
+    --border: 215 35% 22%;
+    --input: 215 35% 22%;
+    --ring: 205 85% 60%;
+
+    --elder-sky: 205 80% 55%;
+    --elder-ocean: 200 70% 40%;
+    --elder-mist: 215 40% 15%;
+    --elder-cloud: 215 45% 12%;
+    --elder-coral: 15 75% 55%;
+    --elder-peach: 25 70% 40%;
+    --elder-mint: 160 40% 35%;
+    --elder-lavender: 250 35% 35%;
+
+    --sidebar-background: 215 50% 10%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 205 85% 60%;
+    --sidebar-primary-foreground: 215 50% 10%;
+    --sidebar-accent: 215 35% 18%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 215 35% 22%;
+    --sidebar-ring: 205 85% 60%;
   }
 }
 
@@ -99,7 +143,108 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-size: 18px;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+}
+
+@layer utilities {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .text-elder-readable {
+    @apply text-lg leading-relaxed tracking-wide;
+  }
+
+  .btn-elder {
+    @apply min-h-[56px] px-8 text-lg font-semibold rounded-2xl transition-all duration-200;
+  }
+
+  .card-elder {
+    @apply rounded-3xl p-6 shadow-[var(--shadow-card)] bg-card;
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .gradient-coral {
+    background: var(--gradient-coral);
+  }
+
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-coral {
+    box-shadow: var(--shadow-coral);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Voice waveform animation */
+  @keyframes waveform {
+    0%, 100% { height: 8px; }
+    50% { height: 32px; }
+  }
+
+  .animate-waveform {
+    animation: waveform 0.5s ease-in-out infinite;
+  }
+
+  /* Pulse animation for voice button */
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1.3); opacity: 0; }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  /* Gentle float animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Heart beat animation */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
   }
 }
