@@ -9,45 +9,45 @@ interface ReminderCardProps {
 }
 
 export function ReminderCard({ reminder, isNext, onComplete }: ReminderCardProps) {
-  const typeColors = {
-    medication: 'bg-elder-lavender border-elder-lavender',
-    appointment: 'bg-elder-mint border-elder-mint',
-    activity: 'bg-elder-peach border-elder-peach',
-    meal: 'bg-elder-sky/20 border-elder-sky',
+  const typeStyles = {
+    medication: 'bg-elder-lavender/50',
+    appointment: 'bg-elder-sage/50',
+    activity: 'bg-elder-cream',
+    meal: 'bg-elder-blush/50',
   };
 
   return (
     <div
       className={cn(
-        "rounded-3xl p-5 border-2 transition-all duration-200",
-        typeColors[reminder.type],
-        isNext && "ring-2 ring-primary ring-offset-2 shadow-card",
-        reminder.completed && "opacity-60"
+        "rounded-2xl p-4 transition-all duration-200 border border-border/50",
+        typeStyles[reminder.type],
+        isNext && "ring-2 ring-primary/30 ring-offset-2 ring-offset-background",
+        reminder.completed && "opacity-50"
       )}
     >
-      <div className="flex items-start gap-4">
-        <div className="text-3xl flex-shrink-0">{reminder.icon}</div>
+      <div className="flex items-center gap-4">
+        <div className="text-2xl flex-shrink-0">{reminder.icon}</div>
         
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <Clock className="h-5 w-5 text-muted-foreground" />
-            <span className="text-lg font-semibold text-muted-foreground">{reminder.time}</span>
+          <div className="flex items-center gap-2 mb-0.5">
+            <Clock className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm font-medium text-muted-foreground">{reminder.time}</span>
             {isNext && (
-              <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+              <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
                 Next
               </span>
             )}
           </div>
           
           <h3 className={cn(
-            "text-xl font-bold mb-1",
+            "text-base font-semibold text-foreground",
             reminder.completed && "line-through"
           )}>
             {reminder.title}
           </h3>
           
           {reminder.description && (
-            <p className="text-muted-foreground text-lg">{reminder.description}</p>
+            <p className="text-sm text-muted-foreground mt-0.5">{reminder.description}</p>
           )}
         </div>
         
@@ -55,13 +55,13 @@ export function ReminderCard({ reminder, isNext, onComplete }: ReminderCardProps
           <button
             onClick={() => onComplete(reminder.id)}
             className={cn(
-              "h-12 w-12 rounded-full border-2 flex items-center justify-center transition-all duration-200",
+              "h-10 w-10 rounded-full border-2 flex items-center justify-center transition-all duration-200 flex-shrink-0",
               reminder.completed
                 ? "bg-success border-success text-success-foreground"
-                : "border-muted-foreground/30 hover:border-success hover:bg-success/10"
+                : "border-border hover:border-primary hover:bg-primary/5"
             )}
           >
-            {reminder.completed && <Check className="h-6 w-6" />}
+            {reminder.completed && <Check className="h-5 w-5" />}
           </button>
         )}
       </div>

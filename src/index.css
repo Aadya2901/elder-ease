@@ -2,139 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* ElderEase - Warm, Accessible Pastel Blue Palette */
-    --background: 210 40% 98%;
-    --foreground: 215 50% 15%;
+    /* ElderEase - Soft Rose & Blush Palette */
+    --background: 0 0% 99%;
+    --foreground: 340 20% 20%;
 
-    --card: 210 50% 99%;
-    --card-foreground: 215 50% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 20% 20%;
 
-    --popover: 210 50% 99%;
-    --popover-foreground: 215 50% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 20%;
 
-    /* Primary - Calming Sky Blue */
-    --primary: 205 85% 55%;
+    /* Primary - Soft Rose */
+    --primary: 345 65% 65%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft Lavender Blue */
-    --secondary: 220 40% 94%;
-    --secondary-foreground: 215 50% 25%;
+    /* Secondary - Misty Blush */
+    --secondary: 350 30% 96%;
+    --secondary-foreground: 340 25% 35%;
 
-    /* Muted - Light Blue Gray */
-    --muted: 210 30% 95%;
-    --muted-foreground: 215 20% 45%;
+    /* Muted - Soft Gray Pink */
+    --muted: 340 15% 95%;
+    --muted-foreground: 340 10% 50%;
 
-    /* Accent - Warm Coral for CTAs */
-    --accent: 15 85% 65%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Dusty Rose */
+    --accent: 350 50% 75%;
+    --accent-foreground: 340 30% 25%;
 
-    /* Emergency Red */
-    --destructive: 0 75% 55%;
+    /* Emergency */
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Success Green */
-    --success: 145 60% 45%;
+    /* Success */
+    --success: 155 50% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Warning Amber */
-    --warning: 38 92% 55%;
-    --warning-foreground: 215 50% 15%;
+    /* Warning */
+    --warning: 35 85% 55%;
+    --warning-foreground: 340 20% 20%;
 
-    --border: 210 30% 88%;
-    --input: 210 30% 92%;
-    --ring: 205 85% 55%;
+    --border: 340 20% 90%;
+    --input: 340 15% 93%;
+    --ring: 345 65% 65%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom ElderEase tokens */
-    --elder-sky: 205 90% 65%;
-    --elder-ocean: 200 75% 45%;
-    --elder-mist: 210 50% 96%;
-    --elder-cloud: 210 60% 99%;
-    --elder-coral: 15 85% 65%;
-    --elder-peach: 25 90% 85%;
-    --elder-mint: 160 50% 85%;
-    --elder-lavender: 250 40% 90%;
+    /* Custom ElderEase rose tokens */
+    --elder-rose: 345 65% 72%;
+    --elder-blush: 350 45% 88%;
+    --elder-misty: 340 25% 96%;
+    --elder-petal: 355 60% 95%;
+    --elder-mauve: 330 30% 70%;
+    --elder-sage: 150 25% 75%;
+    --elder-lavender: 270 35% 85%;
+    --elder-cream: 30 40% 95%;
 
     /* Gradients */
-    --gradient-sky: linear-gradient(135deg, hsl(205 90% 70%) 0%, hsl(200 85% 55%) 100%);
-    --gradient-coral: linear-gradient(135deg, hsl(15 85% 70%) 0%, hsl(5 80% 60%) 100%);
-    --gradient-calm: linear-gradient(180deg, hsl(210 50% 98%) 0%, hsl(210 40% 95%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(205 85% 55%) 0%, hsl(220 70% 50%) 100%);
+    --gradient-rose: linear-gradient(135deg, hsl(345 65% 72%) 0%, hsl(350 55% 65%) 100%);
+    --gradient-blush: linear-gradient(135deg, hsl(350 45% 92%) 0%, hsl(340 35% 88%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(340 25% 97%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(205 50% 50% / 0.15);
-    --shadow-card: 0 8px 30px -8px hsl(205 50% 40% / 0.12);
-    --shadow-button: 0 4px 15px -2px hsl(205 85% 55% / 0.3);
-    --shadow-coral: 0 4px 15px -2px hsl(15 85% 55% / 0.35);
-    --shadow-glow: 0 0 40px hsl(205 85% 55% / 0.2);
+    --shadow-soft: 0 2px 12px -2px hsl(340 30% 50% / 0.08);
+    --shadow-card: 0 4px 20px -4px hsl(340 30% 40% / 0.1);
+    --shadow-button: 0 2px 10px -2px hsl(345 65% 55% / 0.25);
 
-    --sidebar-background: 210 40% 98%;
-    --sidebar-foreground: 215 50% 15%;
-    --sidebar-primary: 205 85% 55%;
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 340 20% 20%;
+    --sidebar-primary: 345 65% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 50% 94%;
-    --sidebar-accent-foreground: 215 50% 25%;
-    --sidebar-border: 210 30% 88%;
-    --sidebar-ring: 205 85% 55%;
+    --sidebar-accent: 350 30% 96%;
+    --sidebar-accent-foreground: 340 25% 35%;
+    --sidebar-border: 340 20% 90%;
+    --sidebar-ring: 345 65% 65%;
   }
 
   .dark {
-    --background: 215 50% 10%;
-    --foreground: 210 40% 95%;
+    --background: 340 15% 8%;
+    --foreground: 340 15% 95%;
 
-    --card: 215 45% 13%;
-    --card-foreground: 210 40% 95%;
+    --card: 340 12% 12%;
+    --card-foreground: 340 15% 95%;
 
-    --popover: 215 45% 13%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 340 12% 12%;
+    --popover-foreground: 340 15% 95%;
 
-    --primary: 205 85% 60%;
-    --primary-foreground: 215 50% 10%;
+    --primary: 345 60% 70%;
+    --primary-foreground: 340 20% 10%;
 
-    --secondary: 215 35% 20%;
-    --secondary-foreground: 210 40% 90%;
+    --secondary: 340 20% 18%;
+    --secondary-foreground: 340 15% 85%;
 
-    --muted: 215 35% 18%;
-    --muted-foreground: 210 25% 60%;
+    --muted: 340 15% 16%;
+    --muted-foreground: 340 12% 55%;
 
-    --accent: 15 80% 60%;
+    --accent: 350 45% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 145 55% 40%;
+    --success: 155 45% 40%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 85% 50%;
-    --warning-foreground: 215 50% 10%;
+    --warning: 35 80% 50%;
+    --warning-foreground: 340 15% 10%;
 
-    --border: 215 35% 22%;
-    --input: 215 35% 22%;
-    --ring: 205 85% 60%;
+    --border: 340 15% 20%;
+    --input: 340 15% 20%;
+    --ring: 345 60% 70%;
 
-    --elder-sky: 205 80% 55%;
-    --elder-ocean: 200 70% 40%;
-    --elder-mist: 215 40% 15%;
-    --elder-cloud: 215 45% 12%;
-    --elder-coral: 15 75% 55%;
-    --elder-peach: 25 70% 40%;
-    --elder-mint: 160 40% 35%;
-    --elder-lavender: 250 35% 35%;
+    --elder-rose: 345 55% 60%;
+    --elder-blush: 350 35% 25%;
+    --elder-misty: 340 15% 14%;
+    --elder-petal: 355 40% 20%;
+    --elder-mauve: 330 25% 45%;
+    --elder-sage: 150 20% 35%;
+    --elder-lavender: 270 25% 40%;
+    --elder-cream: 30 25% 25%;
 
-    --sidebar-background: 215 50% 10%;
-    --sidebar-foreground: 210 40% 95%;
-    --sidebar-primary: 205 85% 60%;
-    --sidebar-primary-foreground: 215 50% 10%;
-    --sidebar-accent: 215 35% 18%;
-    --sidebar-accent-foreground: 210 40% 90%;
-    --sidebar-border: 215 35% 22%;
-    --sidebar-ring: 205 85% 60%;
+    --sidebar-background: 340 15% 8%;
+    --sidebar-foreground: 340 15% 95%;
+    --sidebar-primary: 345 60% 70%;
+    --sidebar-primary-foreground: 340 20% 10%;
+    --sidebar-accent: 340 20% 18%;
+    --sidebar-accent-foreground: 340 15% 85%;
+    --sidebar-border: 340 15% 20%;
+    --sidebar-ring: 345 60% 70%;
   }
 }
 
@@ -148,41 +145,30 @@
   }
 
   body {
-    @apply bg-background text-foreground font-nunito antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
   }
 }
 
 @layer utilities {
-  .font-nunito {
-    font-family: 'Nunito', sans-serif;
+  .font-display {
+    font-family: 'Playfair Display', serif;
   }
 
-  .text-elder-readable {
-    @apply text-lg leading-relaxed tracking-wide;
+  .font-sans {
+    font-family: 'DM Sans', sans-serif;
   }
 
-  .btn-elder {
-    @apply min-h-[56px] px-8 text-lg font-semibold rounded-2xl transition-all duration-200;
+  .gradient-rose {
+    background: var(--gradient-rose);
   }
 
-  .card-elder {
-    @apply rounded-3xl p-6 shadow-[var(--shadow-card)] bg-card;
+  .gradient-blush {
+    background: var(--gradient-blush);
   }
 
-  .gradient-sky {
-    background: var(--gradient-sky);
-  }
-
-  .gradient-coral {
-    background: var(--gradient-coral);
-  }
-
-  .gradient-calm {
-    background: var(--gradient-calm);
-  }
-
-  .gradient-hero {
-    background: var(--gradient-hero);
+  .gradient-soft {
+    background: var(--gradient-soft);
   }
 
   .shadow-soft {
@@ -197,54 +183,33 @@
     box-shadow: var(--shadow-button);
   }
 
-  .shadow-coral {
-    box-shadow: var(--shadow-coral);
-  }
-
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-
   /* Voice waveform animation */
   @keyframes waveform {
-    0%, 100% { height: 8px; }
-    50% { height: 32px; }
+    0%, 100% { height: 6px; }
+    50% { height: 24px; }
   }
 
   .animate-waveform {
-    animation: waveform 0.5s ease-in-out infinite;
+    animation: waveform 0.6s ease-in-out infinite;
   }
 
   /* Pulse animation for voice button */
   @keyframes pulse-ring {
-    0% { transform: scale(0.95); opacity: 1; }
-    100% { transform: scale(1.3); opacity: 0; }
+    0% { transform: scale(0.95); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
   }
 
   .animate-pulse-ring {
-    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
   }
 
   /* Gentle float animation */
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
   }
 
   .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  /* Heart beat animation */
-  @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.15); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.1); }
-    60% { transform: scale(1); }
-  }
-
-  .animate-heartbeat {
-    animation: heartbeat 2s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
   }
 }
