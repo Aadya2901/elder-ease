@@ -7,23 +7,14 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: "2rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
-      },
-      fontSize: {
-        'elder-sm': ['1rem', { lineHeight: '1.5' }],
-        'elder-base': ['1.125rem', { lineHeight: '1.6' }],
-        'elder-lg': ['1.25rem', { lineHeight: '1.6' }],
-        'elder-xl': ['1.5rem', { lineHeight: '1.5' }],
-        'elder-2xl': ['1.875rem', { lineHeight: '1.4' }],
-        'elder-3xl': ['2.25rem', { lineHeight: '1.3' }],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -43,14 +34,6 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))",
-        },
-        warning: {
-          DEFAULT: "hsl(var(--warning))",
-          foreground: "hsl(var(--warning-foreground))",
-        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -67,16 +50,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        elder: {
-          rose: "hsl(var(--elder-rose))",
-          blush: "hsl(var(--elder-blush))",
-          misty: "hsl(var(--elder-misty))",
-          petal: "hsl(var(--elder-petal))",
-          mauve: "hsl(var(--elder-mauve))",
-          sage: "hsl(var(--elder-sage))",
-          lavender: "hsl(var(--elder-lavender))",
-          cream: "hsl(var(--elder-cream))",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -87,13 +60,29 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        elder: {
+          sage: "hsl(var(--elder-sage))",
+          "sage-light": "hsl(var(--elder-sage-light))",
+          coral: "hsl(var(--elder-coral))",
+          "coral-light": "hsl(var(--elder-coral-light))",
+          cream: "hsl(var(--elder-cream))",
+          "warm-white": "hsl(var(--elder-warm-white))",
+          text: "hsl(var(--elder-text))",
+          "text-muted": "hsl(var(--elder-text-muted))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)",
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        medium: "var(--shadow-medium)",
+        "glow-sage": "var(--shadow-glow-sage)",
+        "glow-coral": "var(--shadow-glow-coral)",
       },
       keyframes: {
         "accordion-down": {
@@ -105,19 +94,29 @@ export default {
           to: { height: "0" },
         },
         "fade-in": {
-          from: { opacity: "0", transform: "translateY(8px)" },
+          from: { opacity: "0", transform: "translateY(10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "slide-in": {
+          from: { opacity: "0", transform: "translateX(-20px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
         "scale-in": {
-          from: { opacity: "0", transform: "scale(0.96)" },
+          from: { opacity: "0", transform: "scale(0.95)" },
           to: { opacity: "1", transform: "scale(1)" },
+        },
+        "bounce-gentle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.3s ease-out",
-        "scale-in": "scale-in 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        "slide-in": "slide-in 0.4s ease-out",
+        "scale-in": "scale-in 0.3s ease-out",
+        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
       },
     },
   },
