@@ -152,8 +152,6 @@ Your site will be live in seconds 🚀
 
 ---
 
----
-
 ## 🤝 Contributors
 
 | Team Member | Role |
