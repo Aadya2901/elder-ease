@@ -105,104 +105,121 @@ git clone https://github.com/your-username/elder-ease.git
 cd elder-ease
 ```
 
-2. Install Dependencies
+### 2. Install Dependencies
+
+```
 npm install
+```
 
-3. Add Environment Variables
+---
 
+### 3. Add Environment Variables
+
+```
 Create a .env file:
+```
+
+---
 
 ELEVENLABS_API_KEY=
 RAINDROP_API_KEY=
 VULTR_API_KEY=
 
-4. Start Development Server
+---
+
+### 4. Start Development Server
+
+```
 npm run dev
+```
 
-5. Deployment
+---
 
-Deploy using Vercel, Netlify, or Vultr:
+### 5. Deployment
 
-Push repo to GitHub
+Deploy using `Vercel`, `Netlify`, or `Vultr`:
 
-Connect your repo
+1. Push the repository to GitHub  
+2. Connect your repo to your preferred platform  
+3. Use the following build settings:
 
-Build command → npm run build
-
-Output folder → dist/
+```
+Build Command: npm run build
+Output Folder: dist/
+```
 
 Your site will be live in seconds 🚀
 
-🤝 Contributors
-Team Member	Role
-@aadya2901	AI Integration, Voice UI, Frontend Flow, Deployment
-@ananyamishra13	UI Screens, Output Panels, User Experience
-@iam-anish15	Styling, Accessibility, Senior-Friendly Design
+---
 
-🛠️ How We Built It
+---
 
-SmartMemory: Stores reminders, routines, and preferences 🗂️
+## 🤝 Contributors
 
-SmartInference: AI reasoning + conversational flow 🤖
+| Team Member | Role |
+|------------|------|
+| **@aadya2901** | AI Integration, Voice UI, Frontend Flow, Deployment |
+| **@ananyamishra13** | UI Screens, Output Panels, User Experience |
+| **@iam-anish15** | Styling, Accessibility, Senior-Friendly Design |
 
-ElevenLabs: Warm, human-like speech output 🎤
+---
 
-Lovable.dev: Voice-first screens and accessibility features
+## 🛠️ How We Built It
 
-Vultr Cloud: Emergency alerts + backend notification logic ☁️
+- **SmartMemory** — Stores reminders, routines, and preferences 🗂️  
+- **SmartInference** — AI reasoning and conversational flow 🤖  
+- **ElevenLabs** — Warm, human-like speech output 🎤  
+- **Lovable.dev** — Voice-first screens and accessibility features  
+- **Vultr Cloud** — Emergency alerts and backend notification logic ☁️  
+- **Raindrop Services** — Core AI orchestration and secure data storage  
 
-Raindrop Services: Core AI orchestration + secure data storage
+---
 
-⚡ Challenges Faced
+## ⚡ Challenges Faced
 
-Making the AI voice warm, clear, and comforting
+- Making the AI voice warm, clear, and comforting  
+- Ensuring high speech recognition accuracy for seniors  
+- Designing intuitive voice commands for elderly users  
+- Managing multiple cloud and AI APIs simultaneously  
+- Handling emergency alerts in real time  
 
-Ensuring high speech recognition accuracy for seniors
+---
 
-Designing intuitive voice commands for elderly users
+## 🏆 Accomplishments
 
-Managing multiple cloud + AI APIs simultaneously
+- Built a fully functional voice-powered senior companion  
+- Integrated real-time alert system for families  
+- Designed an extremely senior-friendly user interface  
+- Combined multiple cloud and AI services into one seamless app  
 
-Handling emergency alerts in real time
+---
 
-🏆 Accomplishments
+## 🌱 What We Learned
 
-Built a working voice-powered senior companion
+- Designing effective voice-first interfaces for elderly users  
+- Crafting emotionally warm and supportive AI responses  
+- Managing real-time backend systems on Vultr  
+- Integrating Raindrop, ElevenLabs, Lovable.dev, and cloud services  
 
-Integrated real-time alert system for families
+---
 
-Designed an extremely senior-friendly user interface
+## 🌟 What’s Next for ElderEase
 
-Combined multiple cloud + AI services into one seamless app
+- 🌍 Multi-language voice support  
+- 🩺 Health device integration (BP, HRM, etc.)  
+- 🧠 Advanced personalization using long-term learning  
+- 🏡 Expanded Family Dashboard with health insights  
+- 📶 Offline reminders for low-network areas  
 
-🌱 What We Learned
+---
 
-Designing voice-first interfaces for elderly users
+## 📝 License
 
-Crafting emotionally warm AI responses
+This project is open source under the **MIT License**.
 
-Managing real-time backend systems on Vultr
+---
 
-Integrating Raindrop, ElevenLabs, Lovable.dev, and cloud services
+## 💬 Final Note
 
-🌟 What’s Next for ElderEase
-
-Multi-language voice support 🌍
-
-Health device integration (BP, HRM, etc.)
-
-Advanced personalization using long-term learning
-
-Expanded Family Dashboard with health insights
-
-Offline reminders for low-network areas
-
-📝 License
-
-This project is open source under the MIT License.
-
-💬 Final Note
-
-"Bringing comfort, connection, and companionship to every senior — one gentle conversation at a time." 💖✨
-
+> *"Bringing comfort, connection, and companionship to every senior — one gentle conversation at a time."* 💖✨
 
